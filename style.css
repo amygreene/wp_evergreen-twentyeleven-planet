@@ -49,9 +49,11 @@ body {
 display:none;
 }
 
-
 .loginout a {
 	font-weight:normal;
+}
+input.locked {
+	background: url(images/lock2.png) no-repeat scroll right;
 }
 .singular.page .hentry {
     padding: 0.5em 0 0;
