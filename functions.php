@@ -57,4 +57,19 @@ function remove_default_headers() {
  
 add_action( 'after_setup_theme', 'remove_default_headers', 11 );
 
+
+//replace url in wp_register() to point to custom registartion template at /register
+add_action( 'register' , 'register_replacement' );
+function register_replacement( $link ){
+	if ( ! is_user_logged_in() ) {
+		if ( get_option('users_can_register') )
+			$link = $before . '<a href="' . site_url('register', 'login') . '">' . __('Register') . '</a>' . $after;
+		else
+			$link = '';
+	} else {
+		$link = $before . '<a href="' . admin_url() . '">' . __('Site Admin') . '</a>' . $after;
+	}
+	return $link;
+}
+
 ?>
