@@ -23,8 +23,8 @@ get_header(); ?>
 					$user_blogs = get_blogs_of_user( $facstaff_user->ID ); //get user's blogs by user ID 
 					echo ' '.$facstaff_user->user_login.'\'s sites:<ul>';
 					foreach ($user_blogs AS $user_blog) {
-				    	echo '<li><a href="http://' . $user_blog->domain . $user_blog->path .'">' . $user_blog->blogname . '</a> 
-							| <a href="http://' . $user_blog->domain . $user_blog->path .'wp-admin/options-general.php?page=bcat_settings_site"> edit category</a>
+				    	echo '<li><a href="http://' . $user_blog->domain . $user_blog->path .'" target="_blank">' . $user_blog->blogname . '</a> 
+							| <a href="http://' . $user_blog->domain . $user_blog->path .'wp-admin/options-general.php?page=bcat_settings_site" target="_blank"> edit category</a>
 							</li>';
 					}
 				echo '</ul>';
